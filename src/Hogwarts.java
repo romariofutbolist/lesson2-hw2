@@ -21,14 +21,14 @@ public abstract class Hogwarts {
         return transgressionDistance;
     }
 
-    public static void printPowerHogwarts(Hogwarts[] hogwarts) {
-        Hogwarts hogwartsMaxPower = hogwarts[0];
-        for (Hogwarts hogwartsStudent : hogwarts) {
-            if (hogwartsStudent.getPowerHogwarts() > hogwartsMaxPower.getPowerHogwarts()) {
-                hogwartsMaxPower = hogwartsStudent;
-            }
+    public void printPowerHogwarts(Hogwarts hogwarts) {
+        if(this.getPowerHogwarts() > hogwarts.getPowerHogwarts()) {
+            System.out.println(this.getName() + " сильнее, чем " + hogwarts.getName());
+        } else if (this.getPowerHogwarts() < hogwarts.getPowerHogwarts()) {
+            System.out.println(hogwarts.getName() + " сильнее, чем " + this.getName());
+        } else {
+            System.out.println("Оба равны по силе");
         }
-        System.out.println(hogwartsMaxPower + " лучший в Хогвартсе");
     }
 
     public int getPowerHogwarts() {
@@ -37,14 +37,14 @@ public abstract class Hogwarts {
 
     abstract public int getTotalPowerFaculty();
 
-    public static void printPowerFaculty(Hogwarts[] hogwarts) {
-        Hogwarts hogwartsMaxPower = hogwarts[0];
-        for (Hogwarts hogwartsStudent : hogwarts) {
-            if (hogwartsStudent.getTotalPowerFaculty() > hogwartsMaxPower.getTotalPowerFaculty()) {
-                hogwartsMaxPower = hogwartsStudent;
-            }
+    public void printPowerFaculty(Hogwarts hogwarts) {
+        if(this.getTotalPowerFaculty() > hogwarts.getTotalPowerFaculty()) {
+            System.out.println(this.getName() + " сильнее, чем " + hogwarts.getName());
+        } else if (this.getTotalPowerFaculty() < hogwarts.getTotalPowerFaculty()) {
+            System.out.println(hogwarts.getName() + " сильнее, чем " + this.getName());
+        } else {
+            System.out.println("Оба равны по силе");
         }
-        System.out.println(hogwartsMaxPower + " лучший на факультете");
     }
 
 
